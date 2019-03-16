@@ -43,7 +43,7 @@ public class response extends Fragment {
     float neg_percentage;
 
     private float ydata[] = {25f,75f};
-    private String xdata[] = {"positive response","negative response"};
+    private String xdata[] = {"Positive","Negative"};
 
     PieChart pieChart;
     TextView t;
@@ -119,10 +119,10 @@ public class response extends Fragment {
                         for (DataSnapshot dataSnapshot2 : dataSnapshot1.getChildren()) {
                             if (dataSnapshot2.child("response").getValue().toString().equals("positive")) {
                                 positive++;
-                                System.out.print("ADDED");
+
                             } else {
                                 negative++;
-                                System.out.print("REMOVED");
+
                             }
                         }
                     }

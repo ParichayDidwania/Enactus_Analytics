@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -99,6 +100,8 @@ public class call_logs extends Fragment {
                     responses = new ArrayList<>();
                     dates = new ArrayList<>();
                     times = new ArrayList<>();
+                    check_dates = new ArrayList<>();
+
 
                     for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         check_dates.add(dataSnapshot1.getKey());
@@ -115,6 +118,7 @@ public class call_logs extends Fragment {
                                 responses1 = new ArrayList<>();
                                 dates1 = new ArrayList<>();
                                 times1 = new ArrayList<>();
+
 
                                 DataSnapshot dataSnapshot1 = dataSnapshot.child(check_dates.get(i));
 
@@ -152,6 +156,7 @@ public class call_logs extends Fragment {
                         customAdapter.notifyDataSetChanged();
                     }
                     saveData();
+                    System.out.println("Length of names2: "+names.size());
                     customAdapter.notifyDataSetChanged();
                 }catch (Exception e)
                 {
